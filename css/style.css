@@ -1,0 +1,176 @@
+:root{
+    /*variables para colores generales y de las barras de navegacion*/
+    --text-color: #2E2E2E;
+    --background-color: ghostwhite;
+    --border-navbar-color: #0F85D1;
+    --background-color-navbar: #3498DB;
+    --size-title: 18px;
+    --size-subtitle: 16px;
+    --size-text: 14px;
+
+    /*variables para colores del apartado de animales*/
+
+    /*variables para colores del apartado de siembra*/
+}
+
+body{
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+
+/* 
+
+Estilos la barra de navegacion desktop
+
+*/
+.inactive{
+    display: none;
+}
+
+.button-menu-mobile{
+    display: none;
+
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0px 24px;
+    border-bottom: 1px solid var(--border-navbar-color);   
+}
+
+.navbar-left{
+    display: flex;    
+}
+
+.navbar-left ul{
+    display: grid;
+    margin-left: 12px;
+}
+
+.navbar-left ul li,
+.navbar-right ul li{
+    display: grid;
+    margin: 0 ;
+}
+
+.navbar-left ul li a,
+.navbar-right ul li a{
+    font-size: var(--size-title);
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 0px;
+    padding: 12px 24px;
+    box-shadow: 1px 1px 2px 1px var(--border-navbar-color);
+}
+.navbar-left ul,
+.navbar-right ul{
+    list-style: none;
+    padding: 0;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+
+.navbar-left ul li a:hover,
+.navbar-right ul li a:hover{
+    transition: .15s;
+    border: 1px  solid var(--border-navbar-color);
+    background-color: var(--background-color-navbar);
+    border-radius: 12px;
+    color: white;
+    box-shadow: none;
+}
+
+
+/*
+Estilos en la barra de navegacion en Mobile
+*/
+
+.menu-mobile{
+    padding: 24px;
+    position: absolute;
+    margin-top: 61px;
+    background-color: white;
+    left: 0;
+    width: calc(100% - 48px);
+    height: calc(70% + 48px);
+    
+}
+
+.menu-mobile ul{
+    list-style: none;
+    margin: 24px 0 0;
+    padding: 0;
+}
+
+.menu-mobile ul li{
+    display: flex;
+    margin-bottom: 20px;
+    height: 24px;
+}
+
+
+
+.menu-mobile ul:nth-child(1){
+    border-bottom: 1px solid var(--border-navbar-color);
+}
+
+.menu-mobile a{
+    font-size: var(--size-title);
+    text-decoration: none;
+    color: var(--text-color)
+}
+
+.menu-mobile ul li a:hover{
+    border: 1px  solid var(--border-navbar-color);
+    border-radius: 8px;
+    padding: 0px 12px;
+}
+
+
+/*
+    Estilos de animales
+*/
+
+.animales{
+    background-color: var(--border-navbar-color);
+}
+
+
+
+
+@media(max-width: 640px){
+    .navbar-left{
+        display:none;
+    }
+
+    .navbar-right{
+        display: none;
+    }
+
+    .button-menu-mobile{
+        display: flex;
+        flex-direction: column;
+        width: 3rem;
+        height: 3rem;
+        border: 0;
+        background: transparent;
+        gap: .65rem;
+        cursor: pointer;
+        
+    }
+
+    .button-menu-mobile div{
+        background-color: var(--border-navbar-color);
+        height: 5px;
+        width: 45px;
+        border-radius: 5px;
+        transition: all .3s;
+        transform-origin: left;
+        box-shadow: 1px 1px 2px var(--border-navbar-color);
+    }
+}
