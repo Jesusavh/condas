@@ -7,6 +7,13 @@
     --size-title: 18px;
     --size-subtitle: 16px;
     --size-text: 14px;
+    
+    /*variables de tamaño de las tarjetas animales*/
+    --card-animales-total-conteiner-width:320px; 
+    --card-animales-total-conteiner-height:240px; 
+    --card-animales-conteiner-width: calc(100% - 60px);
+    --card-animales-conteiner-height: auto;
+
 
     /*variables para colores del apartado de animales*/
 
@@ -64,6 +71,7 @@ nav{
     margin: 0px;
     padding: 12px 24px;
     box-shadow: 1px 1px 2px 1px var(--border-navbar-color);
+    border-radius: 4px;
 }
 .navbar-left ul,
 .navbar-right ul{
@@ -77,7 +85,7 @@ nav{
 
 .navbar-left ul li a:hover,
 .navbar-right ul li a:hover{
-    transition: .15s;
+    transition: .25s;
     border: 1px  solid var(--border-navbar-color);
     background-color: var(--background-color-navbar);
     border-radius: 12px;
@@ -137,11 +145,41 @@ Estilos en la barra de navegacion en Mobile
 */
 
 .animales{
+    display: flex;
     background-color: var(--border-navbar-color);
+    width: var(--card-animales-conteiner-width);
+    height: var(--card-animales-conteiner-height);
+    margin: 20px 60px 10px 30px;
+}
+
+.animales-totales{
+    background-color: red;
+    width: var(--card-animales-total-conteiner-width);
+    height: var(--card-animales-total-conteiner-height);
+    margin: 12px 0px 0 ;
+
+}
+
+.animales-registrados{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 150px);
+    place-content: center;
+    gap: 12px;
+    background-color: green;
+    width: 100%;
+    height: calc(100% - 22px);
+    margin: 12px 32px;
 }
 
 
+.animales-existentes{
+    display: grid;
+    background-color: purple;
+    width: 140px;
+    height: 140px;
+    grid-template-columns: auto 1fr auto auto;
 
+}
 
 @media(max-width: 640px){
     .navbar-left{
@@ -172,5 +210,32 @@ Estilos en la barra de navegacion en Mobile
         transition: all .3s;
         transform-origin: left;
         box-shadow: 1px 1px 2px var(--border-navbar-color);
+    }
+    
+    .animales{
+        display: grid;
+        width:100%;
+        height: auto;
+        gap: 12px;
+        place-content: center;
+        
+    }
+    .animales-registrados{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 150px);
+        place-content: center;
+        margin-left:0;
+        background-color: green;
+        width: 100%;
+        height: calc(100% - 22px);
+        
+    }
+
+    .animales-totales{
+        background-color: red;
+        width: var(--card-animales-total-conteiner-width);
+        height: var(--card-animales-total-conteiner-height);
+        width: 500px;
+    
     }
 }
