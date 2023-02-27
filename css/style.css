@@ -14,6 +14,10 @@
     --card-animales-conteiner-width: calc(100% - 60px);
     --card-animales-conteiner-height: auto;
 
+    /* Variables para tamaños de las tarjetas*/
+    --card-nuevo-conteiner-width: 100%;
+    --card-nuevo-conteiner-height:calc(100% - 22px);
+
 
     /*variables para colores del apartado de animales*/
 
@@ -140,13 +144,14 @@ Estilos en la barra de navegacion en Mobile
 }
 
 
+
 /*
     Estilos de animales
 */
 
 .animales{
     display: flex;
-    background-color: var(--border-navbar-color);
+    
     width: var(--card-animales-conteiner-width);
     height: var(--card-animales-conteiner-height);
     margin: 20px 60px 10px 30px;
@@ -162,24 +167,59 @@ Estilos en la barra de navegacion en Mobile
 
 .animales-registrados{
     display: grid;
+    background-color: goldenrod;
     grid-template-columns: repeat(auto-fill, 150px);
     place-content: center;
     gap: 12px;
-    background-color: green;
-    width: 100%;
-    height: calc(100% - 22px);
+    width: var(--card-nuevo-conteiner-width);
+    height: var(--card-nuevo-conteiner-height);
     margin: 12px 32px;
 }
 
 
 .animales-existentes{
-    display: grid;
-    background-color: purple;
+    background-color: skyblue;
     width: 140px;
     height: 140px;
     grid-template-columns: auto 1fr auto auto;
+    border: 1px solid var(--text-color);
+    border-radius: 12px ;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
 
 }
+
+/*Agregar nuevo campo*/
+.agregar-nuevo-campo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    width: 50px;
+    height: 50px;  
+    border-radius: 12px;
+    cursor: pointer;
+    border: 1px solid var(--text-color);
+}
+
+.agregar-nuevo-campo:hover{
+    transition: 0.15s;
+    border-radius: 18px;
+    font-size: 82px;
+    text-shadow: 1px 1px 2px black; 
+}
+
+.agregar-nuevo-campo p{
+    font-size: 80px;
+}
+
+
+.animales-registrados:last-child{
+    justify-items: center;
+    align-items: center;
+}
+
 
 @media(max-width: 640px){
     .navbar-left{
