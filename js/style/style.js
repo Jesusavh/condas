@@ -6,16 +6,22 @@ button_Menu_Mobile.addEventListener('click', toggleMobileMenu);
 
 
 //Variables de los campos de la seccion de animales
-const agregar_nuevo_campo= document.querySelector('.agregar-nuevo-campo');
-agregar_nuevo_campo.addEventListener('click', agregarCampo);
+const agregarNuevoCampoAnimales= document.querySelector('#btnAddAnimales');
+agregarNuevoCampoAnimales.addEventListener('click', agregarCampoAnimales);
 const animales_registrados = document.querySelector('.animales-registrados');
+
+
+//variables de los campos de la seccion de siembra
+const agregarNuevoCampoSiembra = document.querySelector('#btnAddSiembra');
+agregarNuevoCampoSiembra.addEventListener('click', agregarCampoSiembra)
+const siembrasRegistradas = document.querySelector('.siembras-registradas')
 
 //Funcion que se encarga de mostrar y ocultar el menu en mobiles
 function toggleMobileMenu(){
     menuMobile.classList.toggle('inactive')
 }
 
-function agregarCampo(){
+function agregarCampoAnimales(){
     const animal_existente = document.createElement('div');
     animal_existente.classList.add('animales-existentes');
 
@@ -23,5 +29,11 @@ function agregarCampo(){
 
 }
 
+function agregarCampoSiembra(){
+    const siembraExistente = document.createElement('div');
+    siembraExistente.classList.add('siembras-existentes');
+
+    siembrasRegistradas.insertAdjacentElement('afterbegin',siembraExistente);
+}
 
 
