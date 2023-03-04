@@ -179,7 +179,7 @@ Estilos en la barra de navegacion en Mobile
 
 
 .animales-existentes{
-    background-color: skyblue;
+    background-color: #fefefe;
     width: 140px;
     height: 140px;
     grid-template-columns: auto 1fr auto auto;
@@ -188,7 +188,66 @@ Estilos en la barra de navegacion en Mobile
     justify-content: center;
     align-items: center;
     text-align: start;
+}
 
+
+
+/*Boton de ver animales*/
+.ver-animales{
+    position: flex;
+    background-color: var(--background-color-navbar);
+    border: 1px solid var(--border-navbar-color);
+    border-radius: 8px;
+    color: white;
+    width: 48px;
+    height: 24px;
+    margin-left: 80px;
+    padding-bottom: 0;
+    margin-bottom:0%;
+    cursor: pointer;
+}
+.ver-animales:hover{
+    transition: 0.2s;
+    background-color: #0F85D1;
+}
+
+.animales-existentes-modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+
+}
+.datos-animales-existentes{
+    border-radius: 16px;
+    border: 1px solid var(--border-navbar-color);
+    position: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px 40px;
+    width: 60%;
+}
+
+.closed-modal{
+    background-color: var(--background-color-navbar);
+    border: 1px solid var(--border-navbar-color);
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    width: 64px;
+    height: 32px;
+    margin-left: 90%;
+    margin-top: 0;
+    padding-bottom: 0;
+    
 }
 
 /*Agregar nuevo campo*/
@@ -272,6 +331,47 @@ Estilos en la barra de navegacion en Mobile
 
 }
 
+/* ESTO ES UN EJEMPLO DE COMO HACER UN MODAL
+
+.animales-totales-modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+
+}
+.modal-content{
+    position: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    width: 80%;
+    a continuacion se le agregan animaciones
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+animaciones.
+@-webkit-keyframes animatetop {
+    from {top:100px; opacity:0} 
+    to {top:0px; opacity:1}
+  }
+
+@keyframes animatetop{
+    from {top: -100px; opacity: 0;}
+    to{top:0px; opacity: 1;} 
+} */
+
+
 
 @media(max-width: 640px){
     .navbar-left{
@@ -330,4 +430,30 @@ Estilos en la barra de navegacion en Mobile
         width: 85vw;
     
     }
+
+    .siembra{
+        display: grid;
+        width:90%;
+        height: auto;
+        gap: 12px;
+        place-content: center;
+        
+    }
+    .siembras-registradas{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 150px);
+        place-content: center;
+        margin-left:0;
+        background-color: green;
+        width: 100%;
+        height: calc(100% - 22px);
+        
+    }
+
+    .siembras-totales{
+        background-color: red;
+        width: var(--card-animales-total-conteiner-width);
+        height: var(--card-animales-total-conteiner-height);
+        width: 85vw;
+}      
 }
