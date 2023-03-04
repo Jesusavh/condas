@@ -39,26 +39,30 @@ const btnNuevoCampo = document.querySelectorAll("#btnAdd");
 const crearNuevoCampo = function () {
 	// Recuerda, this es el elemento
     const condicional = this.parentElement.className;
-        new Promise( function(resolve, reject) {
+        new Promise(function(resolve, reject){
             if(condicional == 'animales-registrados'){
                 const animal_existente = document.createElement('div');
-
+                //campos donde se encuentran los datos de animales
                 const animalExistenteNombre = document.createElement('div');
                 const animalExistenteAlimento = document.createElement('div');
                 const animalExistenteEdad = document.createElement('div');
                 const animalNombre = document.createElement('p');
                 const animalAlimento = document.createElement('p');
                 const animalEdad= document.createElement('p');
+                //agregando informacion a los parrafos de datos de animales.
                 animalNombre.innerText = 'Nombre';
                 animalAlimento.innerText = 'Nombre';
                 animalEdad.innerText = 'Nombre';
+                //añadiendo parrafos de animales a su div correspondiente
                 animalExistenteNombre.append(animalNombre);
                 animalExistenteAlimento.append(animalAlimento);
                 animalExistenteEdad.append(animalEdad);
                 animal_existente.classList.add('animales-existentes');
+                //creando boton de ver datos.
                 const btnVerAnimales = document.createElement('button');
                 btnVerAnimales.innerText = 'Ver';
                 btnVerAnimales.classList.add('ver-animales');
+                //añadiendo funcionalidad al boton
                 btnVerAnimales.addEventListener('click',function(){
                     animales_registrados_modal.style.display = 'flex';
                 } )
@@ -68,14 +72,14 @@ const crearNuevoCampo = function () {
                         animales_registrados_modal.style.display = 'none';
                     }
                 }
-                        
+                //agregando todos los datos al div de animales_existentes
                 animal_existente.append(animalExistenteNombre, animalExistenteAlimento, animalExistenteEdad,btnVerAnimales);
+                //añadiendo animales existentes al div de animales_registrados.
                 animales_registrados.insertAdjacentElement('afterbegin',animal_existente);
-                resolve('Realizado');
+                resolve(console.log('Se hizo bien'));
             }else{
-                reject((error) =>{
-                    console.log(error)
-                } );
+
+                reject('error');
             }
             })
 
@@ -95,12 +99,16 @@ btnNuevoCampo.forEach(boton => {
 });//SI NO ME ACUERDO DE ALGO PREGUNTARLE A OMAR Y VIVAS.
 
 //Agregando un modal a animales para ver en una ventana "aparte" todos sus datos.
-btnVerAnimales.addEventListener('click',function(){
-    animales_registrados_modal.style.display = 'flex';
-} )
-
 
 btnCloseVerAnimales.onclick = function(){
     animales_registrados_modal.style.display = 'none';
 }
 
+/*Funcion intentando ver que elementos tiene cada cuadrito de animales */
+const datosAnimales = document.querySelectorAll('.ver-animales');
+console.log(datosAnimales)
+datosAnimales.forEach(btn => {
+    btn.addEventListener('click', function(){
+        console.log('Un boton')
+    })
+})
