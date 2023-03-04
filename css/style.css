@@ -193,7 +193,7 @@ Estilos en la barra de navegacion en Mobile
 
 
 /*Boton de ver animales*/
-.ver-animales{
+.ver-datos{
     position: flex;
     background-color: var(--background-color-navbar);
     border: 1px solid var(--border-navbar-color);
@@ -206,7 +206,7 @@ Estilos en la barra de navegacion en Mobile
     margin-bottom:0%;
     cursor: pointer;
 }
-.ver-animales:hover{
+.ver-datos:hover{
     transition: 0.2s;
     background-color: #0F85D1;
 }
@@ -320,8 +320,8 @@ Estilos en la barra de navegacion en Mobile
 
 .siembras-existentes{
     background-color: palevioletred;
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
     grid-template-columns: auto 1fr auto auto;
     border: 1px solid var(--text-color);
     border-radius: 12px ;
